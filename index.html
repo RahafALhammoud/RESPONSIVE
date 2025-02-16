@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Färdtjänst</title>
+   
+    <!-- font awesome cdn link for fonr awesome 5  used  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header role="banner">
+        <div id="menu-bar" class="fas fa-bars" aria-label="Meny" aria-expanded="false" aria-controls="navbar"></div>
+        <a class="navbar-brand" href="/" aria-label="Hem">
+            <div href="#" class="logo-image">
+                <h1> Färdtjänst_Service</h1>
+            </div>
+        </a>
+        <div class="nav" >
+            <nav class="navbar" role="navigation" id="navbar">
+                <a href="#home" aria-label="Gå till hemsektion">Hem</a>
+                <a href="#book" aria-label="Gå till bokningssektion">Boka</a>
+                <a href="#services" aria-label="Gå till tjänster">Tjänster</a>
+                <a href="#review" aria-label="Gå till recensioner">Recensioner</a>
+                <a href="#contact" aria-label="Gå till kontaktsektion">Kontakt</a>
+                <a href="#usability-report" aria-label="Gå till kontaktsektion">usability-report</a>
+            </nav>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-user" id="login-btn" aria-label="Logga in"></i>
+        </div>    
+    </header>
+
+    <div class="login-form-container" aria-hidden="true" role="dialog">
+
+        <i class="fas fa-times" id="form-close" aria-label="Stäng inloggningsformulär"></i>
+        <form action="" aria-labelledby="login-form-title">
+            <h2 id="login-form-title">Logga in</h2>
+            
+           
+            <label for="email">E-postadress:</label>
+            <input type="email" id="email" class="box" placeholder="Ange din e-postadress" aria-required="true">
+            
+      
+            <label for="password">Lösenord:</label>
+            <input type="password" id="password" class="box" placeholder="Ange ditt lösenord" aria-required="true">
+            
+         
+            <button type="submit" class="btn">Logga in</button>
+            
+       
+            <div>
+                <input type="checkbox" id="remember">
+                <label for="remember">Kom ihåg mig</label>
+            </div>
+            
+           
+            <p>Glömt lösenord? <a href="#" aria-label="Återställ lösenord">Klicka här</a></p>
+            <p>Har du inte ett konto? <a href="#" aria-label="Registrera dig nu">Registrera dig nu</a></p>
+        </form>
+    </div>
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3>Färdtjänst Service</h3>
+            <p>Enkel och bekväm bokning av transport online</p>
+            <p>Res med oss, en mycket bekväm transporttjänst dygnet runt, snabbt och säkert.</p>
+            <a href="#services" class="btnmain" aria-label="Läs mer om våra tjänster">Läs mer>>></a>
+        </div>
+      
+        <div class="img-container">
+            <img src="images/1.png" id="img-slider" alt="Bild på transporttjänst">
+        </div>
+        <div class="text-controls">
+            <button onclick="changeFontSize(1.2)" aria-label="Öka textstorlek" tabindex="5">
+                Större text – Öka textstorleken
+            </button>
+            
+            <button onclick="changeFontSize(1)" aria-label="Återställ textstorlek" tabindex="6">
+                Återställ – Återställ till standard textstorlek
+            </button>
+            
+            <button onclick="changeFontSize(0.8)" aria-label="Minska textstorlek" tabindex="7">
+                Mindre text – Minska textstorleken
+            </button>
+            
+            <button onclick="speakText('Vänligen fyll i alla obligatoriska fält i formuläret.')">
+                Läs instruktioner – Ger användaren instruktioner för formuläret
+            </button>
+            
+            <button onclick="startRecognition()">
+                Starta röstigenkänning – Startar röstigenkänning för att kontrollera användarens tal
+            </button>
+            
+        </div>
+    </section>
+
+    <section class="book" id="book" role="region">
+        <h1 class="heading"><span>BOKA NU</span></h1>
+        <div class="row">
+          
+            <div class="instructions">
+                <h2>Hur man använder bokningssystemet</h2>
+                <p><strong>För att boka en resa:</strong></p>
+                <ul>
+                    <li>Fyll i de obligatoriska fälten som namn, användartyp, telefonnummer, avresepunkt och destination.</li>
+                    <li>Välj datum och tid noggrant.</li>
+                    <li>Du kan välja <strong>en tur och retur resa</strong> eller <strong>återkommande resa</strong> och specificera dagar.</li>
+                    <li>Klicka på <strong>"Bekräfta bokning"</strong> för att lägga till din resa i listan.</li>
+                </ul>
+            </div>
+    
+      
+            <form id="bookingForm" aria-labelledby="booking-form-title" role="form">
+                <h2 id="booking-form-title">Bokningsformulär</h2>
+                
+            
+                <label for="fullName">Fullständigt namn:</label>
+                <input type="text" id="fullName" required placeholder="Ange ditt fullständiga namn" aria-required="true">
+              
+                <label for="userType">Användartyp:</label>
+                <select id="userType" aria-required="true">
+                    <option value="Vanlig">Vanlig</option>
+                    <option value="Student">Student</option>
+                    <option value="Pensionär">Pensionär</option>
+                </select>
+                
+            
+                <label for="phoneNumber">Telefonnummer:</label>
+                <input type="tel" id="phoneNumber" required placeholder="Ange ditt telefonnummer" aria-required="true">
+                
+         
+                <label for="departure">Avresepunkt:</label>
+                <input type="text" id="departure" required placeholder="Exempel: Stadsstationen" aria-required="true">
+                
+             
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" required placeholder="Exempel: Sjukhuset" aria-required="true">
+                
+            
+                <label for="dateTime">Datum och tid:</label>
+                <input type="datetime-local" id="dateTime" required aria-required="true">
+                
+             
+                <div class="checkbox-container">
+                    <input type="checkbox" id="roundTrip">
+                    <label for="roundTrip">Vill du boka en tur och retur resa?</label>
+                </div>
+                
+           
+                <div class="checkbox-container">
+                    <input type="checkbox" id="recurringTrip">
+                    <label for="recurringTrip">Vill du boka en återkommande resa?</label>
+                </div>
+                
+             
+                <div id="recurringDaysContainer">
+                    <label for="recurringDays">Återkommande dagar:</label>
+                    <input type="text" id="recurringDays" placeholder="Exempel: Söndag, Tisdag">
+                </div>
+                
+           
+                <button type="submit">Bekräfta bokning</button>
+                
+              
+                <div class="trip-list" aria-live="polite">
+                    <h2>Bokade resor</h2>
+                    <ul id="bookingsList" aria-label="Lista över bokade resor"></ul>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+<br>
+<br>
+<style>
+    .complaint-container {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #222;
+    background-color: #f9f9f9; 
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+textarea {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border: 1px solid #656262; /* تحسين وضوح الحواف */
+    border-radius: 5px;
+}
+
+button.submit-btn {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #1b5b01;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.submit-btn:hover {
+    background-color: #379e0e;
+}
+
+</style>
+<div class="complaint-container">
+    <h2>📝 Skicka ett klagomål</h2>
+    <p>Om du har ett problem, vänligen beskriv det noggrant så hjälper vi dig.</p>
+    
+    <form>
+        <fieldset>
+            <legend>Beskriv ditt klagomål</legend>
+            
+            <label for="complaint">Klagomål:</label>
+            <textarea id="complaint" name="complaint" rows="5" aria-describedby="complaintHelp" placeholder="Skriv ditt klagomål här..." required></textarea>
+            
+            <small id="complaintHelp" aria-live="polite">
+                Vänligen förtydliga ditt problem för att säkerställa en bättre respons.
+            </small>
+        </fieldset>
+        
+        <button type="submit" class="submit-btn" aria-label="Skicka ditt klagomål">
+            Skicka klagomål
+        </button>
+    </form> 
+</div>
+
+
+</section>
+
+<!-- book section ends -->
+<br />
+<!-- services section starts  -->
+
+<section class="services" id="services" aria-labelledby="services-title">
+    <h1 id="services-title" class="heading">TJÄNSTER</h1>
+
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-wifi" aria-hidden="true"></i>
+            <h2>Wifi</h2>
+            <p>Wifi finns tillgängligt under resan. Det kan variera beroende på transportmedel.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-hotel" aria-hidden="true"></i>
+            <h2>Prisvärda hotell</h2>
+            <p>Hotellen är lyxiga och har alla bekvämligheter. Om du vill bo på en naturcamping måste du specificera det vid bokningen.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-utensils" aria-hidden="true"></i>
+            <h2>Mat och dryck</h2>
+            <p>Mat och dryck finns tillgängliga vid din plats med bara ett klick.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-bullhorn" aria-hidden="true"></i>
+            <h2>Säkerhetsguide</h2>
+            <p>Vi tar Covid-precautioner på allvar. Vi mäter temperaturen var 8:e timme och din säkerhet är vår högsta prioritet.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-train" aria-hidden="true"></i>
+            <h2>Snabbaste resan</h2>
+            <p>Du kan resa med vilket transportmedel du vill (buss/tåg/flygplan). Priserna justeras därefter.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-hiking" aria-hidden="true"></i>
+            <h2>Äventyr</h2>
+            <p>Vi erbjuder även äventyrscamping. Föredras av dem som vill tillbringa tid i naturen.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-smoking-ban" aria-hidden="true"></i>
+            <h2>Rökförbud</h2>
+            <p>Rökning är förbjuden för att skydda våra kunder från allergier och dålig lukt.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Start Usability Report Section -->
+<section class="usability-report" id="usability-report" role="region" aria-labelledby="usability-report-title">
+    <h2 id="usability-report-title" class="heading"><span>Rapport om användarvänlighet</span></h2>
+    <p class="intro">Vårt mål är att skapa en plattform som är lätt att använda för alla användare, oavsett deras tekniska färdigheter eller eventuella fysiska begränsningar. Här är de funktioner vi har implementerat för att säkerställa en god användarupplevelse:</p>
+    
+    <!-- Individual Report Features -->
+    <div class="report-box">
+        <h3>1. Textstorlek och Läsbarhet</h3>
+        <p>Vi har implementerat funktioner som gör det möjligt för användare att justera textstorleken på webbplatsen. Detta gör det lättare att läsa för personer med synnedsättning eller de som föredrar större text.</p>
+    </div>
+    
+    <div class="report-box">
+        <h3>2. Tillgänglighet för röstigenkänning</h3>
+        <p>För att underlätta för användare som har svårt att skriva eller interagera med formulär, har vi implementerat röstigenkänning. Den här funktionen gör det möjligt att använda sidan genom att tala snarare än att skriva.</p>
+    </div>
+
+    <div class="report-box">
+        <h3>3. Enkel navigering</h3>
+        <p>Vi har optimerat navigeringen genom att erbjuda tydliga menyalternativ och en enkel layout, vilket gör det enkelt att hitta rätt information snabbt.</p>
+    </div>
+
+    <div class="report-box">
+        <h3>4. Tillgänglighet för användare med funktionsnedsättning</h3>
+        <p>Vi har tagit hänsyn till WCAG AA-standarder för att säkerställa att vår webbplats är tillgänglig för personer med olika typer av funktionsnedsättningar. Detta inkluderar färgkontrast, tangentbordsnavigering och skärmläsarstöd.</p>
+    </div>
+
+    <div class="report-box">
+        <h3>5. Tydliga instruktioner och hjälp</h3>
+        <p>Vi har tillhandahållit detaljerade instruktioner för användare om hur de kan boka sina resor och vad de ska göra om de stöter på problem. Dessutom kan användare skicka klagomål och få hjälp med eventuella frågor eller problem.</p>
+    </div>
+
+    <div class="report-box">
+        <h3>6. Responsiv design</h3>
+        <p>Vår webbplats är utformad för att vara fullt funktionell på både mobila enheter och stationära datorer, vilket gör den lätt att använda på alla skärmstorlekar.</p>
+    </div>
+
+    <p class="conclusion">Vi är alltid öppna för feedback och arbetar kontinuerligt för att förbättra användarupplevelsen. Om du har några förslag på hur vi kan göra vår webbplats ännu bättre, vänligen kontakta oss.</p>
+</section>
+<!-- End Usability Report Section -->
+
+<!-- review section starts  -->
+
+<section class="review" id="review">
+
+    <div class="swiper-container review-slider">
+        <div class="swiper-wrapper">
+    
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="images/pic1.jpg" alt="Recension från Ahmed">
+                    <h3>Ahmed Al-Kaabi</h3>
+                    <p>Webbplatsens gränssnitt är enkelt och lätt att navigera. Jag kunde boka min resa på mindre än en minut utan några komplikationer. Färgerna och typsnitten är mycket tydliga.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="images/pic2.jpg" alt="Recension från Layla">
+                    <h3>Layla Mohammed</h3>
+                    <p>Jag använde webbplatsen med en skärmläsare och den var väldigt kompatibel med mina behov. Alla knappar och etiketter var tydliga och jag kunde navigera enkelt.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="images/pic3.jpg" alt="Recension från Khaled">
+                    <h3>Khaled Al-Ansari</h3>
+                    <p>Jag gillade att webbplatsen tillåter mig att förstora texten enkelt, vilket hjälpte mig mycket eftersom jag har nedsatt syn. En fantastisk upplevelse!</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="images/pic4.jpg" alt="Recension från Somaya">
+                    <h3>Somaya Ibrahim</h3>
+                    <p>Webbplatsen är helt responsiv på mobiltelefoner, och jag stötte inte på några svårigheter vid bokning eller ändring. En mycket smidig upplevelse!</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    
+    </section>
+    
+    
+</section>
+
+
+<br />
+
+</section>
+
+
+<section class="contact" id="contact">
+
+<h1 class="heading">
+    <span>KONTAKT</span>
+   
+    <br />
+    <div class="row">
+
+        <div class="map" style="width: 40%">
+            <iframe width="380" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Be%20368%20A,%20Gali%20No%201,%20Near%20Lig%20Flats,%20Hari%20Nagar+(TravelIndia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                <a href="https://www.gps.ie/car-satnav-gps/">best sat navs</a>
+            </iframe>
+        </div>
+        <form action="">
+            <div class="inputBox">
+                <input type="text" placeholder="Name">
+                <input type="number" placeholder="Phone No">
+            </div>
+            <div class="inputBox">
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Subject">
+            </div>
+            <textarea placeholder="Message" name="" id="" cols="30" rows="10"></textarea>
+            <input type="submit" class="btn" value="Send Message>>>">
+        </form>
+    </div>
+</section>
+
+<!-- contact section ends -->
+<br />
+    <section class="footer">
+        <h1 class="credit"> Created by <span> Sabrin altahan</span> | &copy; All rights reserved! by TravelIndia </h1>
+    </section>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

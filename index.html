@@ -17,10 +17,13 @@
 <body>
 
     <header role="banner">
-        <div id="menu-bar" class="fas fa-bars" aria-label="Meny" aria-expanded="false" aria-controls="navbar"></div>
+        <div id="menu-bar" class="fas fa-bars" aria-label="Öppna meny" aria-expanded="false" aria-controls="navbar"></div>
         <a class="navbar-brand" href="/" aria-label="Hem">
             <div href="#" class="logo-image">
-                <h1> Färdtjänst_Service</h1>
+                <h1 style="opacity: 1; color: rgb(0, 0, 238); background-color: rgb(255, 255, 255);">
+                    Färdtjänst_Service
+                </h1>
+                
             </div>
         </a>
         <div class="nav" >
@@ -39,7 +42,7 @@
         </div>    
     </header>
 
-    <div class="login-form-container" aria-hidden="true" role="dialog">
+    <div class="login-form-container" aria-hidden="false" role="dialog">
 
         <i class="fas fa-times" id="form-close" aria-label="Stäng inloggningsformulär"></i>
         <form action="" aria-labelledby="login-form-title">
@@ -47,11 +50,11 @@
             
            
             <label for="email">E-postadress:</label>
-            <input type="email" id="email" class="box" placeholder="Ange din e-postadress" aria-required="true">
+            <input type="email" id="email" class="box" placeholder="Ange din e-postadress" aria-required="true" aria-label="E-postadress">
             
       
             <label for="password">Lösenord:</label>
-            <input type="password" id="password" class="box" placeholder="Ange ditt lösenord" aria-required="true">
+            <input type="password" id="password" class="box" placeholder="Ange ditt lösenord" aria-required="true" aria-label="Lösenord">
             
          
             <button type="submit" class="btn">Logga in</button>
@@ -70,8 +73,10 @@
     <section class="home" id="home">
 
         <div class="content">
-            <h3>Färdtjänst Service</h3>
-            <p>Enkel och bekväm bokning av transport online</p>
+            <h2 style="opacity: 1; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);" >Färdtjänst Service</h2>
+            <h3 style="opacity: 1; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+                Enkel och bekväm bokning av transport online
+            </h3>
             <p>Res med oss, en mycket bekväm transporttjänst dygnet runt, snabbt och säkert.</p>
             <a href="#services" class="btnmain" aria-label="Läs mer om våra tjänster">Läs mer>>></a>
         </div>
@@ -80,35 +85,36 @@
             <img src="1.png" id="img-slider" alt="Bild på transporttjänst">
         </div>
         <div class="text-controls">
-            <button onclick="changeFontSize(1.2)" aria-label="Öka textstorlek" tabindex="5">
+            <button onclick="changeFontSize(1.2)" aria-label="Öka textstorlek" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
                 Större text – Öka textstorleken
             </button>
             
-            <button onclick="changeFontSize(1)" aria-label="Återställ textstorlek" tabindex="6">
+            <button onclick="changeFontSize(1)" aria-label="Återställ textstorlek" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
                 Återställ – Återställ till standard textstorlek
             </button>
             
-            <button onclick="changeFontSize(0.8)" aria-label="Minska textstorlek" tabindex="7">
+            <button onclick="changeFontSize(0.8)" aria-label="Minska textstorlek" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
                 Mindre text – Minska textstorleken
             </button>
             
-            <button onclick="speakText('Vänligen fyll i alla obligatoriska fält i formuläret.')">
-                Läs instruktioner – Ger användaren instruktioner för formuläret
-            </button>
-            
-            <button onclick="startRecognition()">
-                Starta röstigenkänning – Startar röstigenkänning för att kontrollera användarens tal
-            </button>
+
+<button onclick="speakText('Vänligen fyll i alla obligatoriska fält i formuläret.')" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+    Läs instruktioner – Ger användaren instruktioner för formuläret
+</button>
+
+<button onclick="startRecognition()" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+    Starta röstigenkänning – Startar röstigenkänning för att kontrollera användarens tal
+</button>
             
         </div>
     </section>
 
     <section class="book" id="book" role="region">
-        <h1 class="heading"><span>BOKA NU</span></h1>
+        <h2 class="heading"><span>BOKA NU</span></h2>
         <div class="row">
           
             <div class="instructions">
-                <h2>Hur man använder bokningssystemet</h2>
+                <h3>Hur man använder bokningssystemet</h3>
                 <p><strong>För att boka en resa:</strong></p>
                 <ul>
                     <li>Fyll i de obligatoriska fälten som namn, användartyp, telefonnummer, avresepunkt och destination.</li>
@@ -124,14 +130,16 @@
                 
             
                 <label for="fullName">Fullständigt namn:</label>
-                <input type="text" id="fullName" required placeholder="Ange ditt fullständiga namn" aria-required="true">
+                <input type="text" id="fullName" required placeholder="Ange ditt fullständiga namn" aria-required="true" aria-label="Fullständigt namn">
               
                 <label for="userType">Användartyp:</label>
-                <select id="userType" aria-required="true">
-                    <option value="Vanlig">Vanlig</option>
-                    <option value="Student">Student</option>
-                    <option value="Pensionär">Pensionär</option>
-                </select>
+                <select id="userType" aria-required="true" aria-label="Typ av användare" aria-label="Telefonnummer">
+                    <option value="Normal">Vanlig</option>
+                    <option value="Patient">Patient</option>
+                    <option value="Elderly">Äldre</option>
+                    <option value="SpecialNeeds">Personer med funktionsnedsättning</option>
+                 </select>
+                 
                 
             
                 <label for="phoneNumber">Telefonnummer:</label>
@@ -139,15 +147,15 @@
                 
          
                 <label for="departure">Avresepunkt:</label>
-                <input type="text" id="departure" required placeholder="Exempel: Stadsstationen" aria-required="true">
+                <input type="text" id="departure" required placeholder="Exempel: Stadsstationen" aria-required="true" aria-label="Avgångsplats">
                 
              
                 <label for="destination">Destination:</label>
-                <input type="text" id="destination" required placeholder="Exempel: Sjukhuset" aria-required="true">
+                <input type="text" id="destination" required placeholder="Exempel: Sjukhuset" aria-required="true" aria-label="Destination">
                 
             
                 <label for="dateTime">Datum och tid:</label>
-                <input type="datetime-local" id="dateTime" required aria-required="true">
+                <input type="datetime-local" id="dateTime" required aria-required="true" aria-label="Datum och tid">
                 
              
                 <div class="checkbox-container">
@@ -257,47 +265,47 @@ button.submit-btn:hover {
 <!-- services section starts  -->
 
 <section class="services" id="services" aria-labelledby="services-title">
-    <h1 id="services-title" class="heading">TJÄNSTER</h1>
+    <h2 id="services-title" class="heading">TJÄNSTER</h2>
 
     <div class="box-container">
         <div class="box">
-            <i class="fas fa-wifi" aria-hidden="true"></i>
-            <h2>Wifi</h2>
+            <i class="fas fa-wifi" aria-hidden="false"></i>
+            <h3>Wifi</h3>
             <p>Wifi finns tillgängligt under resan. Det kan variera beroende på transportmedel.</p>
         </div>
 
         <div class="box">
-            <i class="fas fa-hotel" aria-hidden="true"></i>
+            <i class="fas fa-hotel" aria-hidden="false"></i>
             <h2>Prisvärda hotell</h2>
             <p>Hotellen är lyxiga och har alla bekvämligheter. Om du vill bo på en naturcamping måste du specificera det vid bokningen.</p>
         </div>
 
         <div class="box">
-            <i class="fas fa-utensils" aria-hidden="true"></i>
+            <i class="fas fa-utensils" aria-hidden="false"></i>
             <h2>Mat och dryck</h2>
             <p>Mat och dryck finns tillgängliga vid din plats med bara ett klick.</p>
         </div>
 
         <div class="box">
-            <i class="fas fa-bullhorn" aria-hidden="true"></i>
+            <i class="fas fa-bullhorn" aria-hidden="false"></i>
             <h2>Säkerhetsguide</h2>
             <p>Vi tar Covid-precautioner på allvar. Vi mäter temperaturen var 8:e timme och din säkerhet är vår högsta prioritet.</p>
         </div>
 
         <div class="box">
-            <i class="fas fa-train" aria-hidden="true"></i>
+            <i class="fas fa-train" aria-hidden="false"></i>
             <h2>Snabbaste resan</h2>
             <p>Du kan resa med vilket transportmedel du vill (buss/tåg/flygplan). Priserna justeras därefter.</p>
         </div>
 
         <div class="box">
-            <i class="fas fa-hiking" aria-hidden="true"></i>
+            <i class="fas fa-hiking" aria-hidden="false"></i>
             <h2>Äventyr</h2>
             <p>Vi erbjuder även äventyrscamping. Föredras av dem som vill tillbringa tid i naturen.</p>
         </div>
 
         <div class="box">
-            <i class="fas fa-smoking-ban" aria-hidden="true"></i>
+            <i class="fas fa-smoking-ban" aria-hidden="false"></i>
             <h2>Rökförbud</h2>
             <p>Rökning är förbjuden för att skydda våra kunder från allergier och dålig lukt.</p>
         </div>
@@ -354,7 +362,7 @@ button.submit-btn:hover {
             <div class="swiper-slide">
                 <div class="box">
                     <img src="pic1.jpg" alt="Recension från Ahmed">
-                    <h3>Ahmed Al-Kaabi</h3>
+                    <h2>Ahmed Al-Kaabi</h2>
                     <p>Webbplatsens gränssnitt är enkelt och lätt att navigera. Jag kunde boka min resa på mindre än en minut utan några komplikationer. Färgerna och typsnitten är mycket tydliga.</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -369,7 +377,7 @@ button.submit-btn:hover {
             <div class="swiper-slide">
                 <div class="box">
                     <img src="pic2.jpg" alt="Recension från Layla">
-                    <h3>Layla Mohammed</h3>
+                    <h2>Layla Mohammed</h2>
                     <p>Jag använde webbplatsen med en skärmläsare och den var väldigt kompatibel med mina behov. Alla knappar och etiketter var tydliga och jag kunde navigera enkelt.</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -384,7 +392,7 @@ button.submit-btn:hover {
             <div class="swiper-slide">
                 <div class="box">
                     <img src="pic3.jpg" alt="Recension från Khaled">
-                    <h3>Khaled Al-Ansari</h3>
+                    <h2>Khaled Al-Ansari</h2>
                     <p>Jag gillade att webbplatsen tillåter mig att förstora texten enkelt, vilket hjälpte mig mycket eftersom jag har nedsatt syn. En fantastisk upplevelse!</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -399,7 +407,7 @@ button.submit-btn:hover {
             <div class="swiper-slide">
                 <div class="box">
                     <img src="pic4.jpg" alt="Recension från Somaya">
-                    <h3>Somaya Ibrahim</h3>
+                    <h2>Somaya Ibrahim</h2>
                     <p>Webbplatsen är helt responsiv på mobiltelefoner, och jag stötte inte på några svårigheter vid bokning eller ändring. En mycket smidig upplevelse!</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -427,12 +435,11 @@ button.submit-btn:hover {
 
 <section class="contact" id="contact">
 
-<h1 class="heading">
-    <span>KONTAKT</span>
-   
+    <h2 class="heading">
+        <span>KONTAKT</span>
+    </h2>
     <br />
     <div class="row">
-
         <div class="map" style="width: 40%">
             <iframe width="380" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                 src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Be%20368%20A,%20Gali%20No%201,%20Near%20Lig%20Flats,%20Hari%20Nagar+(TravelIndia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
@@ -441,23 +448,30 @@ button.submit-btn:hover {
         </div>
         <form action="">
             <div class="inputBox">
-                <input type="text" placeholder="Name">
-                <input type="number" placeholder="Phone No">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Name">
+                <label for="phone">Phone No</label>
+                <input id="phone" type="number" placeholder="Phone No">
             </div>
             <div class="inputBox">
-                <input type="email" placeholder="Email">
-                <input type="text" placeholder="Subject">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Email">
+                <label for="subject">Subject</label>
+                <input id="subject" type="text" placeholder="Subject">
             </div>
-            <textarea placeholder="Message" name="" id="" cols="30" rows="10"></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Message" cols="30" rows="10"></textarea>
             <input type="submit" class="btn" value="Send Message>>>">
         </form>
     </div>
-</section>
+    </section>
+    
+    
 
 <!-- contact section ends -->
 <br />
     <section class="footer">
-        <h1 class="credit"> Created by <span> Sabrin altahan</span> | &copy; All rights reserved! by TravelIndia </h1>
+        <h2 class="credit"> Created by <span  style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"> Sabrin altahan</span> | &copy; All rights reserved! by TravelIndia </h2>
     </section>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

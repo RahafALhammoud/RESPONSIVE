@@ -527,8 +527,7 @@ background: #218838;
     display: flex;
     justify-content: center;
 }
-
-
+/* Usability Report Styles */
 .usability-report {
   background-color: #f8f9fa;
   padding: 40px;
@@ -540,25 +539,21 @@ background: #218838;
 .usability-report h1 {
   text-align: center;
   font-size: 2rem;
-  color: #000000; /* تغيير اللون إلى الأسود لتعزيز التباين */
+  color: #0b0a0a;
   margin-bottom: 20px;
-  font-weight: bold; /* جعل الخط عريضًا */
 }
 
 .usability-report .heading span {
-  color: #004b8d; /* لون أزرق داكن لضمان التباين الجيد */
+  color: #044f9a;
 }
 
 .usability-report .intro {
-  font-size: 1.2rem; /* زيادة حجم الخط لسهولة القراءة */
-  color: #000000; /* تغيير اللون إلى الأسود لتعزيز التباين */
+  font-size: 1.1rem;
+  color: #0b0b0b;
   line-height: 1.6;
   margin-bottom: 30px;
   text-align: center;
-  font-weight: normal; /* جعل الخط عادي لزيادة التوازن */
 }
-
-
 
 .report-box {
   background-color: #fff;
@@ -814,3 +809,37 @@ body {
   background-color: #0056b3;
 }
 
+/* تنسيق الحقول داخل النموذج */
+input, textarea, label {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* تنسيق الحقول الإدخال */
+input[type="text"], input[type="email"], input[type="number"], textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+.btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.btn:hover {
+  background-color: #45a049;
+}
